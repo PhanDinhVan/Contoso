@@ -86,6 +86,8 @@ D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\Microsoft.ApplicationI
 D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\Microsoft.Web.Infrastructure.dll
 D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\Newtonsoft.Json.dll
+D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\PagedList.dll
+D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\PagedList.Mvc.dll
 D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\System.Web.Helpers.dll
 D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\System.Web.Mvc.dll
 D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\System.Web.Optimization.dll
@@ -102,6 +104,8 @@ D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\Microsoft.AI.Web.xml
 D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\Microsoft.AI.WindowsServer.xml
 D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\Microsoft.ApplicationInsights.xml
 D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\PagedList.xml
+D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\PagedList.Mvc.xml
 D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\System.Web.Helpers.xml
 D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\System.Web.Mvc.xml
 D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\System.Web.Optimization.xml
@@ -111,12 +115,5 @@ D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\System.Web.WebPages.De
 D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\System.Web.WebPages.Razor.xml
 D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\Antlr3.Runtime.pdb
 D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\Newtonsoft.Json.xml
-D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\obj\Debug\ContosoUniversity.Migrations.init.resources
-D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\obj\Debug\ContosoUniversity.csproj.GenerateResource.Cache
 D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\obj\Debug\ContosoUniversity.dll
 D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\obj\Debug\ContosoUniversity.pdb
-D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\obj\Debug\ContosoUniversity.csprojResolveAssemblyReference.cache
-D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\PagedList.dll
-D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\PagedList.Mvc.dll
-D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\PagedList.xml
-D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\PagedList.Mvc.xml

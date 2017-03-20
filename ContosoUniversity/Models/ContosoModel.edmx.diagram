@@ -4,12 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="699afb0dd72c47fdbebd3587f6de61c1" Name="Diagram1">
-        <EntityTypeShape EntityType="ContosoUniversityModel.Course" Width="1.5" PointX="2.625" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ContosoUniversityModel.Enrollment" Width="1.5" PointX="5.875" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ContosoUniversityModel.Student" Width="1.5" PointX="9.375" PointY="1" IsExpanded="true" />
+      <Diagram DiagramId="e982b178a4554b56b39dfe26800ad77e" Name="Diagram1">
+        <EntityTypeShape EntityType="ContosoUniversityModel.Course" Width="1.5" PointX="5.375" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContosoUniversityModel.Department" Width="1.5" PointX="7.625" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContosoUniversityModel.Enrollment" Width="1.5" PointX="2.5" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContosoUniversityModel.Instructor" Width="1.5" PointX="4.875" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContosoUniversityModel.OfficeAssignment" Width="1.5" PointX="5.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ContosoUniversityModel.Student" Width="1.5" PointX="2.5" PointY="2.5" IsExpanded="true" />
+        <AssociationConnector Association="ContosoUniversityModel.FK_Course_Department" ManuallyRouted="false" />
         <AssociationConnector Association="ContosoUniversityModel.FK_Enrollment_Course1" ManuallyRouted="false" />
+        <AssociationConnector Association="ContosoUniversityModel.FK_Department_Instructor" ManuallyRouted="false" />
         <AssociationConnector Association="ContosoUniversityModel.FK_Enrollment_Student1" ManuallyRouted="false" />
+        <AssociationConnector Association="ContosoUniversityModel.FK_OfficeAssignment_Instructor" ManuallyRouted="false" />
+        <AssociationConnector Association="ContosoUniversityModel.CourseInstructor" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

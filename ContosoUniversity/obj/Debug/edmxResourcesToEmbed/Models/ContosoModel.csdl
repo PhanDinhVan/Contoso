@@ -4,10 +4,25 @@
     <Key>
       <PropertyRef Name="CourseID" />
     </Key>
-    <Property Name="CourseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseID" Type="Int32" Nullable="false" />
     <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Credits" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Department" Relationship="Self.FK_Course_Department" FromRole="Course" ToRole="Department" />
     <NavigationProperty Name="Enrollments" Relationship="Self.FK_Enrollment_Course1" FromRole="Course" ToRole="Enrollment" />
+    <NavigationProperty Name="Instructors" Relationship="Self.CourseInstructor" FromRole="Course" ToRole="Instructor" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DepartmentID" />
+    </Key>
+    <Property Name="DepartmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Budget" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="InstructorID" Type="Int32" />
+    <NavigationProperty Name="Courses" Relationship="Self.FK_Course_Department" FromRole="Department" ToRole="Course" />
+    <NavigationProperty Name="Instructor" Relationship="Self.FK_Department_Instructor" FromRole="Department" ToRole="Instructor" />
   </EntityType>
   <EntityType Name="Enrollment">
     <Key>
@@ -16,9 +31,29 @@
     <Property Name="EnrollmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="CourseID" Type="Int32" Nullable="false" />
     <Property Name="StudentID" Type="Int32" Nullable="false" />
-    <Property Name="Grade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Grade" Type="Int32" />
     <NavigationProperty Name="Course" Relationship="Self.FK_Enrollment_Course1" FromRole="Enrollment" ToRole="Course" />
     <NavigationProperty Name="Student" Relationship="Self.FK_Enrollment_Student1" FromRole="Enrollment" ToRole="Student" />
+  </EntityType>
+  <EntityType Name="Instructor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FirstMidName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HireDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Departments" Relationship="Self.FK_Department_Instructor" FromRole="Instructor" ToRole="Department" />
+    <NavigationProperty Name="OfficeAssignment" Relationship="Self.FK_OfficeAssignment_Instructor" FromRole="Instructor" ToRole="OfficeAssignment" />
+    <NavigationProperty Name="Courses" Relationship="Self.CourseInstructor" FromRole="Instructor" ToRole="Course" />
+  </EntityType>
+  <EntityType Name="OfficeAssignment">
+    <Key>
+      <PropertyRef Name="InstructorID" />
+    </Key>
+    <Property Name="InstructorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Instructor" Relationship="Self.FK_OfficeAssignment_Instructor" FromRole="OfficeAssignment" ToRole="Instructor" />
   </EntityType>
   <EntityType Name="Student">
     <Key>
@@ -30,6 +65,18 @@
     <Property Name="EnrollmentDate" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Enrollments" Relationship="Self.FK_Enrollment_Student1" FromRole="Student" ToRole="Enrollment" />
   </EntityType>
+  <Association Name="FK_Course_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="Course" Type="Self.Course" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DepartmentID" />
+      </Principal>
+      <Dependent Role="Course">
+        <PropertyRef Name="DepartmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Enrollment_Course1">
     <End Role="Course" Type="Self.Course" Multiplicity="1" />
     <End Role="Enrollment" Type="Self.Enrollment" Multiplicity="*" />
@@ -39,6 +86,18 @@
       </Principal>
       <Dependent Role="Enrollment">
         <PropertyRef Name="CourseID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Department_Instructor">
+    <End Role="Instructor" Type="Self.Instructor" Multiplicity="0..1" />
+    <End Role="Department" Type="Self.Department" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Instructor">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Department">
+        <PropertyRef Name="InstructorID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -54,17 +113,52 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="ContosoUniversityEntities" annotation:LazyLoadingEnabled="true">
+  <Association Name="FK_OfficeAssignment_Instructor">
+    <End Role="Instructor" Type="Self.Instructor" Multiplicity="1" />
+    <End Role="OfficeAssignment" Type="Self.OfficeAssignment" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Instructor">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OfficeAssignment">
+        <PropertyRef Name="InstructorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CourseInstructor">
+    <End Role="Course" Type="Self.Course" Multiplicity="*" />
+    <End Role="Instructor" Type="Self.Instructor" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="ContosoUniversityEntities3" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Courses" EntityType="Self.Course" />
+    <EntitySet Name="Departments" EntityType="Self.Department" />
     <EntitySet Name="Enrollments" EntityType="Self.Enrollment" />
+    <EntitySet Name="Instructors" EntityType="Self.Instructor" />
+    <EntitySet Name="OfficeAssignments" EntityType="Self.OfficeAssignment" />
     <EntitySet Name="Students" EntityType="Self.Student" />
+    <AssociationSet Name="FK_Course_Department" Association="Self.FK_Course_Department">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Course" EntitySet="Courses" />
+    </AssociationSet>
     <AssociationSet Name="FK_Enrollment_Course1" Association="Self.FK_Enrollment_Course1">
       <End Role="Course" EntitySet="Courses" />
       <End Role="Enrollment" EntitySet="Enrollments" />
     </AssociationSet>
+    <AssociationSet Name="FK_Department_Instructor" Association="Self.FK_Department_Instructor">
+      <End Role="Instructor" EntitySet="Instructors" />
+      <End Role="Department" EntitySet="Departments" />
+    </AssociationSet>
     <AssociationSet Name="FK_Enrollment_Student1" Association="Self.FK_Enrollment_Student1">
       <End Role="Student" EntitySet="Students" />
       <End Role="Enrollment" EntitySet="Enrollments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OfficeAssignment_Instructor" Association="Self.FK_OfficeAssignment_Instructor">
+      <End Role="Instructor" EntitySet="Instructors" />
+      <End Role="OfficeAssignment" EntitySet="OfficeAssignments" />
+    </AssociationSet>
+    <AssociationSet Name="CourseInstructor" Association="Self.CourseInstructor">
+      <End Role="Course" EntitySet="Courses" />
+      <End Role="Instructor" EntitySet="Instructors" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

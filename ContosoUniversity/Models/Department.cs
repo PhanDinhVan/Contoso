@@ -12,24 +12,22 @@ namespace ContosoUniversity.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Course
+    public partial class Department
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Course()
+        public Department()
         {
-            this.Enrollments = new HashSet<Enrollment>();
-            this.Instructors = new HashSet<Instructor>();
+            this.Courses = new HashSet<Course>();
         }
     
-        public int CourseID { get; set; }
-        public string Title { get; set; }
-        public string Credits { get; set; }
         public int DepartmentID { get; set; }
+        public string Name { get; set; }
+        public string Budget { get; set; }
+        public Nullable<System.DateTime> StartDate { get; set; }
+        public Nullable<int> InstructorID { get; set; }
     
-        public virtual Department Department { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Enrollment> Enrollments { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Instructor> Instructors { get; set; }
+        public virtual ICollection<Course> Courses { get; set; }
+        public virtual Instructor Instructor { get; set; }
     }
 }

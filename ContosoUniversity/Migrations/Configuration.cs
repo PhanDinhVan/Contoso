@@ -69,37 +69,52 @@ namespace ContosoUniversity.Migrations
             courses.ForEach(s => context.Courses.AddOrUpdate(p => p.Title, s));
             context.SaveChanges();
 
+            var instructor = new List<Instructor>
+            {
+                new Instructor {ID = 1, LastName = "Phan", FirstMidName = "Dinh Van", HireDate = DateTime.Parse("2010-11-12") },
+                new Instructor {ID = 2, LastName = "Phan", FirstMidName = "Dinh Vu", HireDate = DateTime.Parse("2011-10-15") },
+                new Instructor {ID = 3, LastName = "Phan", FirstMidName = "Thi Thu", HireDate = DateTime.Parse("2012-2-10") },
+                new Instructor {ID = 4, LastName = "Phan Thi", FirstMidName = "Quynh Nhu", HireDate = DateTime.Parse("2013-11-4") },
+                new Instructor {ID = 5, LastName = "Tran Ngoc", FirstMidName = "Song Ngan", HireDate = DateTime.Parse("2014-7-17") },
+                new Instructor {ID = 6, LastName = "Dinh Tran", FirstMidName = "Nhat Nam", HireDate = DateTime.Parse("2015-10-2") },
+                new Instructor {ID = 7, LastName = "Nguyen", FirstMidName = "Thanh Viet", HireDate = DateTime.Parse("2016-1-12") },
+                new Instructor {ID = 8, LastName = "Nguyen", FirstMidName = "Thi My", HireDate = DateTime.Parse("2017-8-1") },
+                new Instructor {ID = 9, LastName = "Nguyen", FirstMidName = "Quang Sang", HireDate = DateTime.Parse("2009-4-1") }
+            };
+            instructor.ForEach(s => context.Instructor.AddOrUpdate(p => p.FirstMidName, s));
+            context.SaveChanges();
+
             var enrollments = new List<Enrollment>
             {
                 new Enrollment {
                     StudentID = students.Single(s => s.FirstMidName == "Dinh Van").ID,
                     CourseID = courses.Single(c => c.Title == "Chemistry").CourseID,
-                    Grade = Grade.A.ToString()
+                    Grade = Grade.A
                 },
                 new Enrollment {
                     StudentID = students.Single(s => s.FirstMidName == "Thi Thu").ID,
                     CourseID = courses.Single(c => c.Title == "Microeconomics" ).CourseID,
-                    Grade = Grade.C.ToString()
+                    Grade = Grade.C
                  },
                  new Enrollment {
                     StudentID = students.Single(s => s.FirstMidName == "Dinh Vu").ID,
                     CourseID = courses.Single(c => c.Title == "Macroeconomics" ).CourseID,
-                    Grade = Grade.B.ToString()
+                    Grade = Grade.B
                  },
                  new Enrollment {
                      StudentID = students.Single(s => s.FirstMidName == "Quynh Nhu").ID,
                     CourseID = courses.Single(c => c.Title == "Calculus" ).CourseID,
-                    Grade = Grade.B.ToString()
+                    Grade = Grade.B
                  },
                  new Enrollment {
                      StudentID = students.Single(s => s.FirstMidName == "Song Ngan").ID,
                     CourseID = courses.Single(c => c.Title == "Trigonometry" ).CourseID,
-                    Grade = Grade.B.ToString()
+                    Grade = Grade.B
                  },
                  new Enrollment {
                     StudentID = students.Single(s => s.FirstMidName == "Thi My").ID,
                     CourseID = courses.Single(c => c.Title == "Composition" ).CourseID,
-                    Grade = Grade.B.ToString()
+                    Grade = Grade.B
                  },
                  new Enrollment {
                     StudentID = students.Single(s => s.FirstMidName == "Song Ngan").ID,
@@ -108,22 +123,22 @@ namespace ContosoUniversity.Migrations
                  new Enrollment {
                     StudentID = students.Single(s => s.FirstMidName == "Quang Sang").ID,
                     CourseID = courses.Single(c => c.Title == "Microeconomics").CourseID,
-                    Grade = Grade.B.ToString()
+                    Grade = Grade.B
                  },
                 new Enrollment {
                     StudentID = students.Single(s => s.FirstMidName == "Quang Khai").ID,
                     CourseID = courses.Single(c => c.Title == "Chemistry").CourseID,
-                    Grade = Grade.B.ToString()
+                    Grade = Grade.B
                  },
                  new Enrollment {
                     StudentID = students.Single(s => s.FirstMidName == "Nhat Nam").ID,
                     CourseID = courses.Single(c => c.Title == "Composition").CourseID,
-                    Grade = Grade.B.ToString()
+                    Grade = Grade.B
                  },
                  new Enrollment {
                     StudentID = students.Single(s => s.FirstMidName == "Thanh Viet").ID,
                     CourseID = courses.Single(c => c.Title == "Literature").CourseID,
-                    Grade = Grade.B.ToString()
+                    Grade = Grade.B
                  }
             };
 
