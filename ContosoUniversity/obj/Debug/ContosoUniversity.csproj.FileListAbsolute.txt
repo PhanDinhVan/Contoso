@@ -117,3 +117,16 @@ D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\Antlr3.Runtime.pdb
 D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\Newtonsoft.Json.xml
 D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\obj\Debug\ContosoUniversity.dll
 D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\obj\Debug\ContosoUniversity.pdb
+<<<<<<< HEAD
+=======
+D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\obj\Debug\ContosoUniversity.csprojResolveAssemblyReference.cache
+D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\PagedList.dll
+D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\PagedList.Mvc.dll
+D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\PagedList.xml
+D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\PagedList.Mvc.xml
+D:\HocTap\UNGDUNG\Contoso\ContosoUniversity\obj\Debug\ContosoUniversity.csprojResolveAssemblyReference.cache
+D:\HocTap\UNGDUNG\Contoso\ContosoUniversity\obj\Debug\ContosoUniversity.Migrations.init.resources
+D:\HocTap\UNGDUNG\Contoso\ContosoUniversity\obj\Debug\ContosoUniversity.csproj.GenerateResource.Cache
+D:\HocTap\UNGDUNG\Contoso\ContosoUniversity\obj\Debug\ContosoUniversity.dll
+D:\HocTap\UNGDUNG\Contoso\ContosoUniversity\obj\Debug\ContosoUniversity.pdb
+>>>>>>> 8658e376cd8c2fed47b23e29266a998e14dd52f7
