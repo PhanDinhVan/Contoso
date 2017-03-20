@@ -120,3 +120,8 @@ D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\PagedList.dll
 D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\PagedList.Mvc.dll
 D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\PagedList.xml
 D:\HocTap\UNGDUNG\ContosoUniversity\ContosoUniversity\bin\PagedList.Mvc.xml
+D:\HocTap\UNGDUNG\Contoso\ContosoUniversity\obj\Debug\ContosoUniversity.csprojResolveAssemblyReference.cache
+D:\HocTap\UNGDUNG\Contoso\ContosoUniversity\obj\Debug\ContosoUniversity.Migrations.init.resources
+D:\HocTap\UNGDUNG\Contoso\ContosoUniversity\obj\Debug\ContosoUniversity.csproj.GenerateResource.Cache
+D:\HocTap\UNGDUNG\Contoso\ContosoUniversity\obj\Debug\ContosoUniversity.dll
+D:\HocTap\UNGDUNG\Contoso\ContosoUniversity\obj\Debug\ContosoUniversity.pdb
